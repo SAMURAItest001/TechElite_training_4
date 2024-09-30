@@ -1,0 +1,326 @@
+  /* YouTube【超有料級】現役エンジニアが4時間でLPコーディング（単価8万円）参照 */
+ * {
+  margin: 0;
+  padding: 0;
+ }
+
+ .header_content a {
+  text-decoration: none;
+  color: white;
+ }
+
+ li {
+  list-style: none;
+ }
+
+header {
+  position: fixed; /* ヘッダーを固定する */
+  background-color: #1A48A6;
+  padding: 12px 0px;
+  width: 100%;
+}
+
+header a:hover {
+  opacity: 50%;
+  transition: 0.3s; /* 【09月20日　課題四で追加】ヘッダー選択肢がゆっくり色が変わる */
+}
+
+.header_content {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 0px 8px;
+ }
+
+.header_content ul {
+  display: flex;
+  direction: none;
+  width: 400px;
+  justify-content: space-between;
+}
+
+
+/* 【09月24日　課題四で追加】ハンバーガーメニューがここから */
+.hamburger-menu {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border: none;
+  background: transparent;
+  appearance: none;
+  padding: 0;
+  cursor: pointer;
+  display: none;
+}
+.hamburger-menu__bar {
+  display: inline-block;
+  width: 44%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: .5s;
+}
+.hamburger-menu__bar:first-child {
+  top: 16px;
+}
+.hamburger-menu__bar:nth-child(2) {
+  top: 24px;
+}
+.hamburger-menu__bar:last-child {
+  top: 32px;
+}
+.hamburger-menu--open .hamburger-menu__bar {
+  top: 50%;
+}
+.hamburger-menu--open .hamburger-menu__bar:first-child {
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.hamburger-menu--open .hamburger-menu__bar:last-child {
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+.hamburger-menu--open .hamburger-menu__bar:nth-child(2) {
+  display: none;
+}
+.navigation {
+  display: none;
+  background: #1A48A6;
+  position: fixed;
+  top: 74px;
+  width: 100%;
+  z-index: 9999;
+}
+.navigation__list {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navigation__list-item {
+  border-bottom: solid 1px #1A48A6;
+}
+.navigation__list-item:first-child {
+  border-top: solid 1px #1A48A6;
+}
+.navigation__link {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  padding: 24px 0;
+  transition: .5s;
+  border-bottom: 1px solid white;
+}
+
+.navigation__list-item:first-child {
+  border-top: 1px solid white;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navigation__link:hover {
+    background: #333;
+  }
+}
+/* 【09月24日　課題四で追加】ハンバーガーメニューここまで↑ */
+
+.kv_img {
+  background-image: url(../img/kv.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+
+.kv_slogan p {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-size: 300%;
+  word-break: keep-all; /* 【09月06日　修正】不足していたため追加 */
+ }
+
+/* 【09月19日　課題四で追加】　TechEliteは、顧客に自信を持って…の文言*/
+#my-company >p {
+  text-align: center;
+  font-style: italic; /* 環境によって変わる可能性あり注意 */
+  font-weight: bold;
+  font-size: 38px;
+  margin-bottom: 24px;
+}
+
+/* 【09月19日　課題四で追加】backgroundプロパティでマーカー風のアンダーラインを引く
+  参考URL：https://web-camp.io/magazine/archives/85927 */
+.delivery {
+  background: linear-gradient(transparent 60%, orange 30%);
+  display: inline-block;
+  font-feature-settings: "palt";  /* 【09月20日　課題四で追加】解説を見て追加　*/
+}
+
+
+ #my-company,#service,#form {
+  max-width: 800px;
+  margin: 0 auto;
+ }   
+
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 56px;
+}
+
+.section .title {
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+ /* 【09月08日　課題二で追加】8の倍数で作成すると綺麗 */
+ .service_menu_item {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexbox_item {
+  width: 200px;
+  text-align: center;
+  border: solid 3px gray;
+  padding: 20px;
+  max-width: 800px;
+  cursor: pointer; /* 【09月17日　課題三で追加】ボタンを選択したときにカーソルが変わる */
+}
+
+/* 【09月17日　課題三で追加】色が変わる */
+#web.active,
+#web:hover {
+  background-color: #b3ffff;
+  transition: 0.3s/* 【09月17日　課題三で追加】『ゆっくりと』色が変わる */
+}
+
+#seo.active,
+#seo:hover {
+  background-color: #ffdea0;
+  transition: 0.3s/* 【09月17日　課題三で追加】『ゆっくりと』色が変わる */
+}
+
+#app.active,
+#app:hover {
+  background-color: #a7ff99;
+  transition: 0.3s/* 【09月17日　課題三で追加】『ゆっくりと』色が変わる */
+} 
+
+/* 【09月17日　課題三で追加】文言が表示される外枠 */
+.description {
+  margin: 5px 0px;
+  padding: 8px;
+  border: solid 3px gray;
+  display: block;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+/* 【09月17日　課題三で追加】active文言が表示 */
+.description_text.active {
+  display: block;
+}
+
+/* 【09月17日　課題三で追加】active文言が消える */
+.description_text {
+  display: none;
+}
+
+#form {
+  max-width: 600px;
+  margin: 0 auto;
+  
+}
+
+.form_item {
+  margin-bottom: 16px;
+}
+
+.service_menu_m label {
+ font-size: 24px;
+}
+
+input,select {
+  font-size: 24px;
+  width: 100%;
+  padding: 8px 0;
+}
+
+/* 【09月19日　課題四で追加】　お問い合わせの赤字必須　*/
+.required::after {
+  content: "*必須";
+  color: red;
+  font-size: 0.5em;
+}  
+
+/* 【09月19日　課題四で追加】　お問い合わせの灰色任意　*/
+.any::after {
+  content: "*任意";
+  color: gray;
+  font-size: 0.5em;
+} 
+
+/* 【09月20日　課題四で追加】　送信をした後の画面　*/
+.thanks {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-size: 200%;
+  word-break: keep-all; 
+
+}
+
+
+/* ウィンドウがの幅が630px以下の場合に適用する */
+  @media screen and (max-width: 630px) { 
+    .header_content a {
+      margin: 12px;
+    }
+    .service_menu_item  {
+      flex-flow: column;
+      align-items: center; 
+    }
+    .flexbox_item {
+      margin-bottom: 16px;
+    }
+    .header_content ul {
+      display: none;
+    }
+    .hamburger-menu {
+      display: block;
+      transition: 0.3s
+    }
+    .description{
+      margin: 8px; 
+    }
+
+    .title {
+    margin-top: 40px;   /* ハンバーガーメニューで移動時にヘッダーにタイトルが隠れてしまったため*/
+  } 
+  .thanks {
+    font-size: 24px;
+  }
+}
+
+/* ウィンドウがの幅が521px以下の場合に適用する */
+@media screen and (max-width: 521px) {
+  .kv_slogan p {
+    font-size: 24px;
+  }
+  .thanks {
+    font-size: 16px;
+  }
+}
