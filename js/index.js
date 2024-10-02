@@ -6,10 +6,8 @@ $(function() {
       $(".description_text").removeClass("active");
       $("#"+id+"_text").addClass("active");
     });
-});
 
 // 【09月17日　課題三で追加】https://125naroom.com/web/2899　参照　サービスを押したら要素まで飛ぶ
-$(function(){
   // #で始まるa要素をクリックした場合に処理（"#"←ダブルクォーテンションで囲むのを忘れずに。忘れるとjQueryのバージョンによっては動かない。。）
   $('a[href^="#"]').click(function(){
     // 移動先を0px調整する。0を30にすると30px下にずらすことができる。
@@ -26,7 +24,7 @@ $(function(){
     $('body,html').animate({scrollTop:position}, speed, 'swing');
     return false;
   });
-});
+
 
 // 【09月23日　課題四で追加】都道府県を選択したら市区町村が出てくるところ
 // 参考：https://yutori-shine.com/tech/archives/12
@@ -101,8 +99,6 @@ var iwate = {
     // 各地域を配列にまとめる
     var areaArray = [hokkaido, akita, iwate];
 
-
-$(function() {
   // 地域選択用セレクトボックスが切り替わったら発動
   $('#pref').change(function() {
     // 一旦、都道府県選択用セレクトボックスのoptionを消去
@@ -116,43 +112,44 @@ $(function() {
       $('#city').append($('<option>').html(value).val(index));
     })
   });
-});
 
 // ハンバーガーメニューのぬるぬる動くところ
 /* 【09月24日　課題四で追加】ハンバーガーメニュー
   参考URL：https://rilaks.jp/blog/hamburgermenu-jquery/ */
-$(function () {
   $('#js-hamburger-menu, .navigation__link').on('click', function () {
     $('.navigation').slideToggle(500)
     $('.hamburger-menu').toggleClass('hamburger-menu--open')
   });
-});
 
 // ↑ここまでは問題なく機能する
 
 // 【09月24日　課題四で追加】抜けていたため記載 
 $('form').submit(function() {
   let pref = $('select[name="pref"]').val();
-  console.log(pref); //  console.log　→反応せず
+  var validation_flg = false;
     if(pref == "") {
       $(".pref_validation").css("display","block");
-        return false;
+      validation_flg = true
   }
 
   let city = $('select[name="city"]').val();
-  console.log(city); //  console.log　→反応せず
     if(city == "") {
-      return false;
+      $(".city_validation").css("display","block");
+      validation_flg = true
   }
 
   let tel = $('input[type="tel"]').val(); // 【09月26日　課題四で追加】半角スペースを消しました。
-  console.log(tel); //  console.log　→反応せず
     if(tel){
       const regex = /^0\d{9,10}$/
        if(!regex.test(tel)) {
          $(".tel_validation").css("display","block");
-          return false;
+         validation_flg = true
+        
        }
+       return false;
     }
-    return false;
+    if(validation_flg) {
+      return false;
+    }
+  });
 });
