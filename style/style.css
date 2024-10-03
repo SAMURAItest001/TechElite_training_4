@@ -180,6 +180,11 @@ header a:hover {
   margin-bottom: 12px;
 }
 
+.pref_validation,.city_validation {
+  color: red;
+
+}
+
  /* 【09月08日　課題二で追加】8の倍数で作成すると綺麗 */
  .service_menu_item {
   max-width: 800px;
@@ -240,6 +245,7 @@ header a:hover {
 #form {
   max-width: 600px;
   margin: 0 auto;
+  padding: 8px;
   
 }
 
@@ -306,7 +312,6 @@ input,select {
     .description{
       margin: 8px; 
     }
-
     .title {
     margin-top: 40px;   /* ハンバーガーメニューで移動時にヘッダーにタイトルが隠れてしまったため*/
   } 
