@@ -180,7 +180,7 @@ header a:hover {
   margin-bottom: 12px;
 }
 
-.pref_validation,.city_validation {
+.pref_validation, .city_validation, .tel_validation {
   color: red;
 
 }

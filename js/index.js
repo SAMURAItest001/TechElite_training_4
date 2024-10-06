@@ -130,13 +130,21 @@ $('form').submit(function() {
     if(pref == "") {
       $(".pref_validation").css("display","block");
       validation_flg = true
-  }
+    } else
+    {
+  //エラーじゃないのにメッセージがあったら
+  $(".pref_validation").remove();
+    }
 
   let city = $('select[name="city"]').val();
     if(city == "") {
       $(".city_validation").css("display","block");
       validation_flg = true
-  }
+    } else
+    {
+  //エラーじゃないのにメッセージがあったら
+  $(".city_validation").remove();
+    }
 
   let tel = $('input[type="tel"]').val(); // 【09月26日　課題四で追加】半角スペースを消しました。
     if(tel){
@@ -144,12 +152,11 @@ $('form').submit(function() {
        if(!regex.test(tel)) {
          $(".tel_validation").css("display","block");
          validation_flg = true
-        
-       }
+  }
        return false;
     }
-    if(validation_flg) {
-      return false;
-    }
-  });
+    // if(validation_flg) {
+    //   return false;
+   });
+
 });
