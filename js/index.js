@@ -152,11 +152,15 @@ $('form').submit(function() {
        if(!regex.test(tel)) {
          $(".tel_validation").css("display","block");
          validation_flg = true
-  }
+    }else
+    {
+//エラーじゃないのにメッセージがあったら
+$(".pref_validation").remove();
+    }
        return false;
     }
-    // if(validation_flg) {
-    //   return false;
-   });
-
+  //   if(validation_flg) {
+  //     return false;
+  //  }
+})
 });

@@ -18,6 +18,7 @@ header {
   background-color: #1A48A6;
   padding: 12px 0px;
   width: 100%;
+  z-index: calc(infinity);
 }
 
 header a:hover {
