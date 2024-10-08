@@ -155,12 +155,11 @@ $('form').submit(function() {
     }else
     {
 //エラーじゃないのにメッセージがあったら
-$(".pref_validation").remove();
+$(".tel_validation").remove();
     }
-       return false;
     }
-  //   if(validation_flg) {
-  //     return false;
-  //  }
+    if(validation_flg) {
+      return false;
+   }
 })
 });
